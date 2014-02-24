@@ -3,7 +3,7 @@ package com.mattlogan.xapiclient;
 
 public class RequestCreator {
 
-    private final XAPIClient xapiClient;
+    private final XapiClient xapiClient;
     private final String baseUrl;
     private final String type;
 
@@ -14,7 +14,7 @@ public class RequestCreator {
     private double maxLng;
     private double maxLat;
 
-    RequestCreator(XAPIClient xapiClient, String type) {
+    RequestCreator(XapiClient xapiClient, String type) {
         this.xapiClient = xapiClient;
         this.baseUrl = "http://www.overpass-api.de/api/xapi";
 
@@ -42,7 +42,7 @@ public class RequestCreator {
         return this;
     }
 
-    public void into(XAPIClient.Listener listener) {
+    public void into(XapiClient.Listener listener) {
         String url = baseUrl + "?" + type;
 
         if (attribute != null) {

@@ -10,7 +10,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 
-public class XAPIClient {
+public class XapiClient {
 
     public interface Listener {
         public void onSuccess(JSONArray ways);
@@ -23,19 +23,19 @@ public class XAPIClient {
         public static final String RELATION = "relation";
     }
 
-    static XAPIClient singleton;
+    static XapiClient singleton;
 
     final Context context;
     final RequestQueue requestQueue;
 
-    XAPIClient(Context context) {
+    XapiClient(Context context) {
         this.context = context;
         this.requestQueue = Volley.newRequestQueue(context);
     }
 
-    public static XAPIClient with(Context context) {
+    public static XapiClient with(Context context) {
         if (singleton == null) {
-            singleton = new XAPIClient(context);
+            singleton = new XapiClient(context);
         }
         return singleton;
     }
